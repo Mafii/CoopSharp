@@ -57,32 +57,32 @@ namespace CoopSharp
       return Deserialize<Restaurant>(result);
     }
 
-    public Task<IList<Menu>> GetMenus(int restaurantId)
+    public Task<MenusResult> GetMenus(int restaurantId)
     {
       var result = requester.Get($"/locations/{restaurantId}/menus");
 
-      return Deserialize<IList<Menu>>(result);
+      return Deserialize<MenusResult>(result);
     }
 
-    public Task<IList<Menu>> GetMenus(Restaurant restaurant) => GetMenus(restaurant.Id);
+    public Task<MenusResult> GetMenus(Restaurant restaurant) => GetMenus(restaurant.Id);
 
-    public Task<IList<Menu>> GetTodaysMenus(int restaurantId)
+    public Task<MenusResult> GetTodaysMenus(int restaurantId)
     {
       var result = requester.Get($"/locations/{restaurantId}/menus/today");
 
-      return Deserialize<IList<Menu>>(result);
+      return Deserialize<MenusResult>(result);
     }
 
-    public Task<IList<Menu>> GetTodaysMenus(Restaurant restaurant) => GetTodaysMenus(restaurant.Id);
+    public Task<MenusResult> GetTodaysMenus(Restaurant restaurant) => GetTodaysMenus(restaurant.Id);
 
-    public Task<IList<Menu>> GetMenus(int restaurantId, DateTime day)
+    public Task<MenusResult> GetMenus(int restaurantId, DateTime day)
     {
       var result = requester.Get($"/locations/{restaurantId}/menus/{day.ToUnixTimeStamp()}");
 
-      return Deserialize<IList<Menu>>(result);
+      return Deserialize<MenusResult>(result);
     }
 
-    public Task<IList<Menu>> GetMenus(Restaurant restaurant, DateTime day) => GetMenus(restaurant.Id, day);
+    public Task<MenusResult> GetMenus(Restaurant restaurant, DateTime day) => GetMenus(restaurant.Id, day);
 
     private static Task<T> Deserialize<T>(Task<string> jsonTask)
     {

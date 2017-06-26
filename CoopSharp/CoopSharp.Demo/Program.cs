@@ -12,13 +12,8 @@ namespace CoopSharp.Demo
 
       Console.Out.WriteLine(restaurants.Results.Count);
 
-      Console.WriteLine("Not yet implemented!");
-      Console.ReadLine();
-      Console.ReadLine();
-      Console.ReadLine();
-      Console.ReadLine();
-      Console.ReadLine();
-      Console.ReadLine();
+      var menus = coopClient.GetTodaysMenus(2042).Result;
+
       Console.ReadLine();
     }
   }

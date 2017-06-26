@@ -18,16 +18,16 @@ namespace CoopSharp
 
     Task<Restaurant> GetRestaurant(int restaurantId);
 
-    Task<IList<Menu>> GetMenus(int restaurantId);
+    Task<MenusResult> GetMenus(int restaurantId);
 
-    Task<IList<Menu>> GetMenus(Restaurant restaurant);
+    Task<MenusResult> GetMenus(Restaurant restaurant);
 
-    Task<IList<Menu>> GetTodaysMenus(int restaurantId);
+    Task<MenusResult> GetTodaysMenus(int restaurantId);
 
-    Task<IList<Menu>> GetTodaysMenus(Restaurant restaurant);
+    Task<MenusResult> GetTodaysMenus(Restaurant restaurant);
 
-    Task<IList<Menu>> GetMenus(int restaurantId, DateTime day);
+    Task<MenusResult> GetMenus(int restaurantId, DateTime day);
 
-    Task<IList<Menu>> GetMenus(Restaurant restaurant, DateTime day);
+    Task<MenusResult> GetMenus(Restaurant restaurant, DateTime day);
   }
 }
