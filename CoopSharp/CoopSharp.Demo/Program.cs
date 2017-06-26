@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace CoopSharp.Demo
 {
@@ -13,6 +14,7 @@ namespace CoopSharp.Demo
       Console.Out.WriteLine(restaurants.Results.Count);
 
       var menus = coopClient.GetTodaysMenus(2042).Result;
+      Console.WriteLine($"{menus.Results.First().Title}, {menus.Results.First().Price}");
 
       Console.ReadLine();
     }
