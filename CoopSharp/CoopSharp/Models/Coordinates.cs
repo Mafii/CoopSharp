@@ -1,4 +1,6 @@
-﻿namespace CoopSharp.Models
+﻿using System.Diagnostics;
+
+namespace CoopSharp.Models
 {
   /// <summary>
   /// Coordinates representing GeoJsons geometry coordinates property:

@@ -1,4 +1,6 @@
-﻿namespace CoopSharp.Models
+﻿using System.Diagnostics;
+
+namespace CoopSharp.Models
 {
   /// <summary>
   /// An address representing a swiss city
