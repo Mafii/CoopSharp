@@ -1,18 +1,20 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
+
+using CoopSharp.Demo.Common;
 using CoopSharp.Models;
 
 namespace CoopSharp.Demo
 {
-  class Program
+  internal class Program
   {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
       AsyncMain().GetAwaiter().GetResult();
     }
 
-    static async Task AsyncMain()
+    private static async Task AsyncMain()
     {
       var coopClient = new CoopClientFactory().Create();
       var restaurants = await coopClient.GetRestaurants();
@@ -22,7 +24,7 @@ namespace CoopSharp.Demo
       Console.Out.WriteLine(restaurants.Results.Count);
       Console.WriteLine($"{menus.Results.First().Title}, {menus.Results.First().Price}");
 
-      foreach (var restaurant in restaurants2.Results)
+      foreach (Restaurant restaurant in restaurants2.Results)
       {
         Console.WriteLine($"{restaurant.Id} {restaurant.Name}");
       }

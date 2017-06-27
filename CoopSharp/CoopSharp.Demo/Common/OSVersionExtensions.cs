@@ -1,6 +1,6 @@
 using System;
 
-namespace CoopSharp.Demo
+namespace CoopSharp.Demo.Common
 {
   public static class OSVersionExtensions
   {

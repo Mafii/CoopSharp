@@ -1,5 +1,3 @@
-﻿using System.Diagnostics;
-
 namespace CoopSharp.Models
 {
   public class Restaurant
