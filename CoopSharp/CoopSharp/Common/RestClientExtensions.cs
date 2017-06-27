@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using RestSharp;
 
 namespace CoopSharp.Common
@@ -10,7 +10,7 @@ namespace CoopSharp.Common
       var taskCompletion = new TaskCompletionSource<IRestResponse>();
       client.ExecuteAsync(request, r => taskCompletion.SetResult(r));
 
-      return (RestResponse) await taskCompletion.Task;
+      return (RestResponse)await taskCompletion.Task;
     }
   }
 }
