@@ -373,3 +373,5 @@ paket-files/
 
 # Resharper settings file
 *.sln.DotSettings
+
+.vscode/
