@@ -1,6 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using CoopSharp;
+using System.Linq;
 
 namespace CoopSharp.Tests.FakeObjects
 {
@@ -8,6 +9,11 @@ namespace CoopSharp.Tests.FakeObjects
   {
     public async Task<string> Get(string resource, IDictionary<string, string> queryParameters = null)
     {
+      if (queryParameters.Any() || resource != "/locations/2042/menus")
+      {
+        throw new NotSupportedException();
+      }
+
       return RESULT;
     }
 
